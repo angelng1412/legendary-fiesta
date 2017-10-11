@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Welcome!!</title>
+    <title>Welcome</title>
   </head>
 
   <body>
-    <h1>Welcome {{user}}! Nice to meet you!</h1>
+    {% set messages = get_flashed_messages() %}
+    {% for message in messages %}
+    <center> {{message}} </center>
+    {% endfor %}
+    <br>
+    <center><h1>Welcome {{user}}!</h1></center>
     <br>
     <br>
     <form method="POST" action="/logout">
-      <input type="submit" value="Logout">
+      <center><input type="submit" value="Logout"></center>
     </form>
   </body>
 </html>
